@@ -1,32 +1,28 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <div></div>
 </template>
 
+<script>
+import axios from "axios";
+export default {
+  mounted() {
+    axios({
+      method: "get",
+      url:
+        "https://m.maizuo.com/gateway?cityId=110100&pageNum=1&pageSize=10&type=1&k=1487380",
+      headers: {
+        "X-Client-Info":
+          '{"a":"3000","ch":"1002","v":"5.0.4","e":"16176170383872170715381761","bc":"110100"}',
+        "X-Host": "mall.film-ticket.film.list",
+      },
+    }).then((res) => {
+      console.log(res.data.data.films);
+      console.log(res.data);
+      this.datalist = res.data.data.films;
+    });
+  },
+};
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
 </style>

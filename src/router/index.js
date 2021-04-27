@@ -11,11 +11,25 @@ const router = new Router({
     },
     {
       path: '/login',
+      name: 'Login',
       component: () => import('@/views/login/index.vue')
     },
     {
       path: '/home',
-      component: () => import('@/views/home/index.vue')
+      name: 'Home',
+      component: () => import('@/views/home/index.vue'),
+      redirect: '/welcome',
+      children: [
+        {
+          path: '/welcome',
+          name: 'Welcome',
+          component: () => import('@/views/home/Welcome.vue')
+        },
+        {
+          path: '/users',
+          component: () => import('@/views/user/Users.vue')
+        }
+      ]
     }
   ]
 })

@@ -9,7 +9,8 @@ import '@/assets/fonts/iconfont.css'
 // 引入elementUI
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-Vue.use(ElementUI)
+
+import TreeTable from 'vue-table-with-tree-grid'
 
 import axios from 'axios'
 // 配置请求根路径
@@ -22,6 +23,10 @@ axios.interceptors.request.use(config => {
 })
 // 挂载到 vue 的原型对象上，可通过 this 直接访问 http 从而发送 axios 请求
 Vue.prototype.$http = axios
+
+Vue.use(ElementUI)
+
+Vue.component('tree-table', TreeTable)
 
 Vue.config.productionTip = false
 

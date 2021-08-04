@@ -48,7 +48,7 @@
         </el-menu>
       </el-aside>
       <el-main>
-        <router-view></router-view>
+        <router-view class="loading"></router-view>
       </el-main>
     </el-container>
   </el-container>

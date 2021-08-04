@@ -28,17 +28,24 @@ npm run lint
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-### 存在的问题
+### 技术栈和组件
 
-axios 没有封装
+vue  
+axios  
+elemetnui  
+vue-table-with-tree-grid
 
-### login.vue
-
-elementui: form 表单组件重置和校验，message 消息提示
+### 实现思路
 
 登录成功后的 token 保存到 sessionStorage 中（token 只在当前网站生效）
-项目中除了登录之外的 api 接口，必须在登录后才能访问
+项目中除了登录之外的 api 接口，必须在登录后才能访问,没有登录直接访问其他路由会重定向到登录页面
 
-### home.vue
+用户 -> 角色 -> 权限
 
-elementui: Container 布局容器 NavMenu 导航菜单
+### 待完成
+
+完善角色列表 添加,编辑,删除功能
+
+### 待优化
+
+封装 axios，优化代码结构，抽取重复代码，修改页面样式，封装公共组件，优化代码写法（实现思路和过程）

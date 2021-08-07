@@ -36,6 +36,8 @@ axios
 elemetnui  
 vue-table-with-tree-grid  
 vue-quill-editor
+ECharts
+lodash
 
 ### 实现思路
 

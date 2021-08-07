@@ -38,6 +38,7 @@ vue-table-with-tree-grid
 vue-quill-editor
 ECharts
 lodash
+nprogress
 
 ### 实现思路
 

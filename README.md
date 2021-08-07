@@ -31,9 +31,11 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### 技术栈和组件
 
 vue  
+vue-router
 axios  
 elemetnui  
-vue-table-with-tree-grid
+vue-table-with-tree-grid  
+vue-quill-editor
 
 ### 实现思路
 

@@ -1,17 +1,8 @@
 <template>
   <el-container class="home-container">
-    <el-header>
-      <div>
-        <img src="@/assets/images/header.jpg" alt="" />
-        <span>后台管理系统</span>
-      </div>
-      <el-button type="info" @click="logout">退出</el-button>
-    </el-header>
     <el-container>
       <el-aside :width="isCollapse ? '64px' : '200px'">
-        <div class="toggle-button" @click="toggleCollapse">
-          <i class="iconfont iconmenu"></i>
-        </div>
+        <!-- <div class="title">电商后台管理系统</div> -->
         <el-menu
           background-color="#333744"
           text-color="#fff"
@@ -48,9 +39,23 @@
           </el-submenu>
         </el-menu>
       </el-aside>
-      <el-main>
-        <router-view class="loading"></router-view>
-      </el-main>
+      <el-container>
+        <el-header>
+          <div class="toggle-button" @click="toggleCollapse">
+            <i class="iconfont iconmenu"></i>
+          </div>
+          <div>
+            <div>
+              <img src="@/assets/images/header.jpg" alt="" />
+              <!-- <span>后台管理系统</span> -->
+            </div>
+            <el-button type="info" @click="logout" size="mini">退出</el-button>
+          </div>
+        </el-header>
+        <el-main>
+          <router-view class="loading"></router-view>
+        </el-main>
+      </el-container>
     </el-container>
   </el-container>
 </template>
@@ -113,7 +118,6 @@ export default {
 }
 
 .el-header {
-  background-color: #373d41;
   display: flex;
   justify-content: space-between;
   padding-left: 0;
@@ -124,9 +128,11 @@ export default {
     display: flex;
     align-items: center;
     img {
-      width: 60px;
-      height: 60px;
+      width: 28px;
+      height: 28px;
       border-radius: 50%;
+      margin-right: 5px;
+      vertical-align: middle;
     }
     span {
       margin-left: 15px;
@@ -150,13 +156,20 @@ export default {
 }
 
 .toggle-button {
-  background-color: #4a5064;
+  margin-left: 20px;
   font-size: 10px;
   line-height: 24px;
-  color: #fff;
+  color: #000;
   text-align: right;
   padding-right: 15px;
   letter-spacing: 0.2em;
   cursor: pointer;
+}
+
+.title {
+  color: #fff;
+  width: 200px;
+  padding: 0 20px;
+  margin: 10px 0;
 }
 </style>
